@@ -24,6 +24,17 @@ serve
 
 access your browzer.
 http://localhost:5000
+
+
+normal sample
+http://localhost:5000/index_react
+
+react sample
+http://localhost:5000/index_react
+
+vue sample
+http://localhost:5000/index_vue
 ```
+
 
 
