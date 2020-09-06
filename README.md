@@ -19,14 +19,12 @@ npm install videojs-record --save
 # for serving test
 npm install -g serve
 
-# now run server
+# Run app
 serve
 
-access your browzer.
-http://localhost:5000
-
-
 normal sample
+
+access your browzer.
 http://localhost:5000/index_react
 
 react sample
@@ -34,6 +32,12 @@ http://localhost:5000/index_react
 
 vue sample
 http://localhost:5000/index_vue
+
+# upload app
+npm run start
+
+http://localhost:8080/index_react.html
+http://localhost:8080/index_vue.html
 ```
 
 

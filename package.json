@@ -1,0 +1,31 @@
+{
+  "name": "videojs-record-sample",
+  "version": "1.0.0",
+  "description": "This Repo is simple sample which video recorder.",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "formidable": "^1.2.2",
+    "fs-extra": "^9.0.1",
+    "video.js": "^7.8.4",
+    "videojs-record": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyamotok0105/videojs-record-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miyamotok0105/videojs-record-sample/issues"
+  },
+  "homepage": "https://github.com/miyamotok0105/videojs-record-sample#readme"
+}

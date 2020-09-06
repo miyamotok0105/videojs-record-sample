@@ -4,6 +4,27 @@ const AppComponent = Vue.component('app-component', {
      }
    },
    mounted() {
+
+    function upload(blob) {
+        // this upload handler is served using webpack-dev-server for
+        // this example, see build-config/fragments/dev.js
+        var serverUrl = '/upload';
+        var formData = new FormData();
+        formData.append('file', blob, blob.name);
+
+        console.log('upload recording ' + blob.name + ' to ' + serverUrl);
+
+        // start upload
+        fetch(serverUrl, {
+            method: 'POST',
+            body: formData
+        }).then(
+            success => console.log('upload recording complete.')
+        ).catch(
+            error => console.error('an upload error occurred!')
+        );
+    }
+
     const videoJsOptions = {
         controls: true,
         bigPlayButton: false,
@@ -50,29 +71,11 @@ const AppComponent = Vue.component('app-component', {
         console.log('finished recording:', player.recordedData);
 
         // upload recorded data
-        this.upload(player.recordedData);
+        upload(player.recordedData);
     });
 
    },
    methods: {
-    upload(blob) {
-      // this upload handler is served using webpack-dev-server for
-      // this example, see build-config/fragments/dev.js
-      var serverUrl = '/upload';
-      var formData = new FormData();
-      formData.append('file', blob, blob.name);
-
-      console.log('upload recording ' + blob.name + ' to ' + serverUrl);
-      // start upload
-      fetch(serverUrl, {
-          method: 'POST',
-          body: formData
-      }).then(
-          success => console.log('upload recording complete.')
-      ).catch(
-          error => console.error('an upload error occurred!')
-      );
-    },
    },
    template: '<video id="myVideo" class="video-js vjs-default-skin"></video>'
 });
