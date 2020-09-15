@@ -1,3 +1,4 @@
+
 const AppComponent = Vue.component('app-component', {
    data () {
     return {
@@ -5,22 +6,50 @@ const AppComponent = Vue.component('app-component', {
    },
    mounted() {
 
+    const BASE_URL = "http://127.0.0.1:5000";
+    // test status
+    axios.get(BASE_URL+"/status")
+    .then(function (response) {
+    console.log(response);
+    })
+    .catch(function (error) {
+    console.log(error);
+    });
+
     function upload(blob) {
+
         var host = 'http://127.0.0.1:5000';
         var serverUrl = '/upload';
         var formData = new FormData();
         formData.append('file', blob, blob.name);
 
+        const config = {
+            headers: {
+              'content-type': 'multipart/form-data'
+            }
+        }
         console.log('upload recording ' + blob.name + ' to ' + serverUrl);
 
-        fetch(host+serverUrl, {
-            method: 'POST',
-            body: formData
-        }).then(
-            success => console.log('upload recording complete.')
-        ).catch(
-            error => console.error('an upload error occurred!')
-        );
+        //　*** fetchもaxiosも同じように動くよ。 ***
+
+        // fetch(host+serverUrl, {
+        //     method: 'POST',
+        //     body: formData
+        // }).then(
+        //     success => console.log('upload recording complete.')
+        // ).catch(
+        //     error => console.error('an upload error occurred!')
+        // );
+
+        axios.post(host+serverUrl
+            , formData
+            , config)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
 
     }
 

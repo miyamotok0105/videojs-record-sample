@@ -4,6 +4,7 @@
   "description": "This Repo is simple sample which video recorder.",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.20.0",
     "colors": "^1.4.0",
     "formidable": "^1.2.2",
     "fs-extra": "^9.0.1",
