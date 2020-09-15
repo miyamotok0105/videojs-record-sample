@@ -19,7 +19,7 @@ npm install videojs-record --save
 # for serving test
 npm install -g serve
 
-# Run app
+# Run app by webpack-dev-server
 serve
 
 normal sample
@@ -38,6 +38,19 @@ npm run start
 
 http://localhost:8080/index_react.html
 http://localhost:8080/index_vue.html
+```
+
+# Run app by Flask
+
+static, templates folder is based flask rules.
+    
+Copy node_modules folder to static folder, Before run flask app.
+    
+
+```
+python app.py
+
+http://127.0.0.1:5000/
 ```
 
 
